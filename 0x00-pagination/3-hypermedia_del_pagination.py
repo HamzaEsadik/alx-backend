@@ -26,8 +26,7 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """
-        Cached dataset
+        """Cached dataset
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -51,8 +50,8 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
-        Retrieves info about a page from a given index and with aspecified
-        size
+        Retrieves info about a page from a given index and with a
+        specified size
         """
         data = self.indexed_dataset()
         assert index is not None and index >= 0 and index <= max(data.keys())
